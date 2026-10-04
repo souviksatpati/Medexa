@@ -250,11 +250,6 @@ Requests.
 
 ---
 
-## 📄 License
-Specify your license here (e.g. MIT).
-
----
-
 ## 👤 Author
 **Souvik Satpati**
 Full-Stack Developer | ML/Data Science Enthusiast

@@ -1,0 +1,87 @@
+/* Fonts + Material Symbols, matching the Stitch screens exactly.
+   @import MUST precede @tailwind directives — CSS spec requires all
+   @import statements to come first in the file (besides @charset). */
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  vertical-align: middle;
+}
+.material-symbols-outlined.filled {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+body {
+  font-family: "Atkinson Hyperlegible Next", "Noto Sans", "Noto Sans Bengali", "Noto Sans Devanagari", "Noto Sans Tamil", "Noto Sans Telugu", "Noto Sans Gujarati", "Noto Sans Kannada", "Noto Sans Malayalam", "Noto Sans Oriya", "Noto Sans Gurmukhi", system-ui, -apple-system, sans-serif;
+  background-color: theme("colors.background");
+  color: theme("colors.on-background");
+  min-height: max(884px, 100dvh);
+}
+h1, h2, h3, h4, h5, h6, .display-font {
+  font-family: "Plus Jakarta Sans", "Noto Sans Bengali", "Noto Sans Devanagari", "Noto Sans Tamil", "Noto Sans Telugu", "Noto Sans Gujarati", "Noto Sans Kannada", "Noto Sans Malayalam", "Noto Sans Oriya", "Noto Sans Gurmukhi", system-ui, -apple-system, sans-serif;
+}
+
+/* Indic Script Typography & Line-Height Adjustments for Matra/Conjunct Legibility */
+:lang(bn),
+:lang(hi),
+:lang(ta),
+:lang(te),
+:lang(mr),
+:lang(gu),
+:lang(kn),
+:lang(ml),
+:lang(or),
+:lang(pa),
+:lang(as) {
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+}
+
+:lang(bn) h1, :lang(bn) h2, :lang(bn) h3, :lang(bn) h4, :lang(bn) h5, :lang(bn) h6,
+:lang(hi) h1, :lang(hi) h2, :lang(hi) h3, :lang(hi) h4, :lang(hi) h5, :lang(hi) h6 {
+  line-height: 1.38;
+}
+
+:lang(bn) button, :lang(bn) span, :lang(bn) p,
+:lang(hi) button, :lang(hi) span, :lang(hi) p {
+  text-rendering: optimizeLegibility;
+}
+
+/* Referral Tracker timeline connector — the vertical line linking
+   consecutive history entries. Positioned to run through the center of
+   the 48px (tap-target-min) icon circles used in ReferralTracker.tsx. */
+.timeline-line {
+  position: absolute;
+  left: 23px;
+  top: 48px;
+  bottom: -16px;
+  width: 2px;
+  background-color: theme("colors.outline-variant");
+  z-index: 0;
+}
+.timeline-item:last-child .timeline-line {
+  display: none;
+}
+
+/* Custom scrollbar for the Facility Continuity table's horizontal scroll
+   on narrow viewports — cosmetic only, safe to ignore in non-WebKit. */
+.table-scroll::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+.table-scroll::-webkit-scrollbar-track {
+  background: theme("colors.surface-container");
+  border-radius: 4px;
+}
+.table-scroll::-webkit-scrollbar-thumb {
+  background: theme("colors.outline-variant");
+  border-radius: 4px;
+}
+.table-scroll::-webkit-scrollbar-thumb:hover {
+  background: theme("colors.outline");
+}

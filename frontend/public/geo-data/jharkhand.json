@@ -1,0 +1,36 @@
+{
+  "state": "Jharkhand",
+  "districts": {
+    "Ranchi": {
+      "blocks": {
+        "Kanke": [
+          "Sukhurhutu",
+          "Boreya",
+          "Arsande",
+          "Pithoria"
+        ],
+        "Namkum": [
+          "Lalpur Rural",
+          "Tati",
+          "Rajaulatu",
+          "Sidroll"
+        ]
+      }
+    },
+    "East Singhbhum": {
+      "blocks": {
+        "Ghatshila": [
+          "Dharambahal",
+          "Kasida",
+          "Gopalpur",
+          "Galudih"
+        ],
+        "Potka": [
+          "Haldipokhar",
+          "Sanram",
+          "Kowali"
+        ]
+      }
+    }
+  }
+}

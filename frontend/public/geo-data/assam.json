@@ -1,0 +1,35 @@
+{
+  "state": "Assam",
+  "districts": {
+    "Kamrup": {
+      "blocks": {
+        "Hajo": [
+          "Ramdia",
+          "Dadara",
+          "Singra",
+          "Sualkuchi"
+        ],
+        "Rangia": [
+          "Murara",
+          "Bhatkuchi",
+          "Tarani"
+        ]
+      }
+    },
+    "Cachar": {
+      "blocks": {
+        "Silchar": [
+          "Dudpatil",
+          "Meherpur",
+          "Kanakpur",
+          "Rongpur"
+        ],
+        "Lakhipur": [
+          "Binnakandi",
+          "Chiripool",
+          "Jirighat"
+        ]
+      }
+    }
+  }
+}

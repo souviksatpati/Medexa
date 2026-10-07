@@ -1,0 +1,50 @@
+{
+  "state": "Bihar",
+  "districts": {
+    "Patna": {
+      "blocks": {
+        "Patna Sadar": [
+          "Digha",
+          "Kankarbagh",
+          "Danapur",
+          "Phulwari"
+        ],
+        "Barh": [
+          "Bakhtiarpur",
+          "Athmalgola",
+          "Mokama Rural",
+          "Ghoswari"
+        ]
+      }
+    },
+    "Gaya": {
+      "blocks": {
+        "Bodh Gaya": [
+          "Mastipur",
+          "Tikus",
+          "Bakrour",
+          "Mocharim"
+        ],
+        "Sherghati": [
+          "Hamzapur",
+          "Chitakhap",
+          "Mahamadpur"
+        ]
+      }
+    },
+    "Muzaffarpur": {
+      "blocks": {
+        "Mushahari": [
+          "Bara Jagannath",
+          "Rohua",
+          "Prahladpur"
+        ],
+        "Kanti": [
+          "Kanti Rural",
+          "Damodarpur",
+          "Madanpur"
+        ]
+      }
+    }
+  }
+}

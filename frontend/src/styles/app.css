@@ -1,0 +1,136 @@
+:root {
+  --color-primary: #0f766e;
+  --color-warning: #b45309;
+  --color-danger: #b91c1c;
+  --color-success: #15803d;
+  --color-bg: #f8fafc;
+  --color-text: #1e293b;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.app-nav {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: var(--color-primary);
+}
+.app-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* --- Sync indicator: this is on screen during the live demo, keep it legible --- */
+.sync-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: white;
+  border: 1px solid #e2e8f0;
+}
+.dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+}
+.dot--offline { background: var(--color-danger); }
+.dot--syncing { background: var(--color-warning); animation: pulse 1s infinite; }
+.dot--synced { background: var(--color-success); }
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* --- Referral state machine --- */
+.state-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.4rem;
+  font-weight: 700;
+  background: #e2e8f0;
+}
+.transition-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.transition-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  border: 1px solid var(--color-primary);
+  background: white;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+.transition-btn:hover { background: var(--color-primary); color: white; }
+
+.referral-history-timeline {
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+}
+.timeline-note { font-size: 0.85rem; color: #64748b; margin: 0.2rem 0 0; }
+
+/* --- Risk banner --- */
+.risk-banner { padding: 0.75rem 1rem; border-radius: 0.4rem; margin-top: 0.5rem; }
+.risk-banner--low { background: #dcfce7; }
+.risk-banner--moderate { background: #fef9c3; }
+.risk-banner--high { background: #fed7aa; }
+.risk-banner--emergency { background: #fecaca; font-weight: 700; }
+
+/* --- Dashboard --- */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+.summary-card {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+}
+.summary-card--warning { border-color: var(--color-warning); }
+.summary-card--positive { border-color: var(--color-success); }
+.summary-card__value { display: block; font-size: 1.6rem; font-weight: 800; }
+.summary-card__label { font-size: 0.8rem; color: #64748b; }
+
+.facility-continuity-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+.facility-continuity-table th,
+.facility-continuity-table td { padding: 0.6rem; border-bottom: 1px solid #e2e8f0; text-align: left; }
+.row--alert { background: #fff7ed; }
+.cell--alert { color: var(--color-danger); font-weight: 700; }
+.alert-tag {
+  margin-left: 0.4rem;
+  font-size: 0.7rem;
+  background: var(--color-danger);
+  color: white;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+/* --- Pathway visibility --- */
+.pathway-options { display: flex; flex-direction: column; gap: 0.75rem; }
+.pathway-option { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 0.5rem; }
+.availability-badge { font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 0.3rem; margin-right: 0.3rem; }
+.availability-badge--available { background: #dcfce7; }
+.availability-badge--limited { background: #fef9c3; }
+.availability-badge--unavailable { background: #fecaca; }

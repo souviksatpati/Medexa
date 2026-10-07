@@ -1,0 +1,36 @@
+{
+  "state": "Odisha",
+  "districts": {
+    "Mayurbhanj": {
+      "blocks": {
+        "Baripada": [
+          "Poda Astia",
+          "Manatri",
+          "Kuchei",
+          "Badsole"
+        ],
+        "Rairangpur": [
+          "Gorumahisani",
+          "Suleipat",
+          "Bisoi",
+          "Bahalda"
+        ]
+      }
+    },
+    "Balasore": {
+      "blocks": {
+        "Remuna": [
+          "Mandarpur",
+          "Bada Khuruda",
+          "Kalyani",
+          "Nuasahi"
+        ],
+        "Jaleswar": [
+          "Raibania",
+          "Laxmannath",
+          "Sugalo"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,302 @@
+"""
+Seeds OPERATIONAL demo data (patients, care episodes, triage, referrals,
+transitions, follow-ups) against the REAL facilities already loaded by
+`python -m scripts.import_wb_data --data-dir ../datasets/medexa_db_final`.
+
+Run in this order:
+    1. alembic upgrade head
+    2. python -m scripts.import_wb_data --data-dir ../datasets/medexa_db_final
+    3. python -m scripts.seed_operational_demo
+
+This is a DIFFERENT script from seed_demo_data.py, which creates its own
+fictional facilities and remains useful for a from-scratch demo without
+the real WB dataset. Once you've imported real data, use THIS script
+instead — it references real facility IDs (MED-WB-FAC-######) already
+present in the database, and will fail loudly with a clear error if
+those facilities haven't been imported yet, rather than silently
+creating duplicate fictional ones.
+
+The referral `priority` column is persisted on the canonical Referral model.
+"""
+import asyncio
+import csv
+from datetime import datetime, timezone
+from pathlib import Path
+
+from sqlalchemy import select
+
+from app.core.database import AsyncSessionLocal
+from app.core.security import hash_password
+from app.models.user import User, UserRole
+from app.models.facility import Facility
+from app.models.patient import Patient, Sex
+from app.models.care_episode import CareEpisode, CareEpisodeStatus
+from app.models.observation import TriageAssessment, ClinicalRiskLevel
+from app.models.referral import Referral, ReferralState, ReferralStateTransition
+from app.models.continuity import ReferralSla, FollowUpTask, FollowUpStatus
+from app.models.facility_service import FacilityService, CapacityStatus
+from app.services.sla_engine import compute_initial_sla_due_dates
+
+DATA_DIR = Path(__file__).resolve().parent.parent.parent / "datasets" / "medexa_db_final"
+
+# Real facilities in South 24 Parganas, matching the synthetic operational
+# data's geography. Chosen by inspecting the actual imported data rather
+# than hardcoded blindly — see the README section this script prints at
+# the end for how to verify these are still valid after a re-import.
+DEMO_ASHA_FACILITY_ID = "MED-WB-FAC-000372"   # Maharajganj PHC
+DEMO_DOCTOR_FACILITY_ID = "MED-WB-FAC-000349"  # M. R. Bangur District Hospital
+DEMO_OFFICER_FACILITY_ID = "MED-WB-FAC-000345"  # Diamond Harbour DH
+
+RISK_MAP = {
+    "LOW": ClinicalRiskLevel.LOW,
+    "MEDIUM": ClinicalRiskLevel.MODERATE,
+    "HIGH": ClinicalRiskLevel.HIGH,
+    "CRITICAL": ClinicalRiskLevel.EMERGENCY,
+}
+
+
+def _read_csv(name: str) -> list[dict]:
+    path = DATA_DIR / name
+    if not path.exists():
+        raise FileNotFoundError(
+            f"{path} not found. Run this script from backend/ with the "
+            f"datasets/medexa_db_final folder present at the repo root."
+        )
+    with open(path, newline="", encoding="utf-8-sig") as f:
+        return list(csv.DictReader(f))
+
+
+def _parse_dt(val: str | None) -> datetime | None:
+    if not val:
+        return None
+    val = val.strip()
+    dt = datetime.fromisoformat(val.replace("Z", "+00:00"))
+    return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+
+
+async def _require_real_facilities_imported(db) -> None:
+    result = await db.execute(select(Facility).limit(1))
+    if result.scalar_one_or_none() is None:
+        raise RuntimeError(
+            "No facilities found in the database. Run "
+            "`python -m scripts.import_wb_data --data-dir ../datasets/medexa_db_final` "
+            "before this script."
+        )
+    for facility_id in [DEMO_ASHA_FACILITY_ID, DEMO_DOCTOR_FACILITY_ID, DEMO_OFFICER_FACILITY_ID]:
+        facility = await db.get(Facility, facility_id)
+        if facility is None:
+            raise RuntimeError(
+                f"Expected facility {facility_id} not found after import. "
+                f"The real dataset may have changed IDs — inspect "
+                f"datasets/medexa_db_final/medexa_facilities.csv and update "
+                f"the DEMO_*_FACILITY_ID constants at the top of this script."
+            )
+
+
+async def seed():
+    async with AsyncSessionLocal() as db:
+        await _require_real_facilities_imported(db)
+
+        users = [
+            User(
+                id="demo-asha-001", username="asha.demo",
+                hashed_password=hash_password("demo1234"),
+                full_name="Sunita Devi (ASHA Worker)", role=UserRole.ASHA_WORKER,
+                facility_id=DEMO_ASHA_FACILITY_ID,
+            ),
+            User(
+                id="demo-doctor-001", username="doctor.demo",
+                hashed_password=hash_password("demo1234"),
+                full_name="Dr. Rakesh Verma", role=UserRole.DOCTOR,
+                facility_id=DEMO_DOCTOR_FACILITY_ID,
+            ),
+            User(
+                id="demo-officer-001", username="officer.demo",
+                hashed_password=hash_password("demo1234"),
+                full_name="Anita Sharma (District Health Officer)", role=UserRole.DISTRICT_OFFICER,
+                facility_id=DEMO_OFFICER_FACILITY_ID,
+            ),
+        ]
+        for u in users:
+            existing = await db.get(User, u.id)
+            if existing is None:
+                db.add(u)
+        await db.flush()
+        print("Seeded 3 demo users tied to REAL facilities (asha.demo / doctor.demo / officer.demo, password: demo1234)")
+
+        patients = _read_csv("medexa_synthetic_patients.csv")
+        for row in patients:
+            existing = await db.get(Patient, row["patient_id"])
+            if existing is not None:
+                continue
+            db.add(Patient(
+                id=row["patient_id"], full_name=row["full_name"],
+                age=int(row["age"]), sex=Sex(row["sex"].lower()),
+                village_or_ward=row.get("village_or_ward") or row.get("village_name") or "Unknown",
+                phone=row.get("phone") or None,
+                chronic_conditions=[],
+            ))
+        await db.flush()
+        print(f"Seeded {len(patients)} synthetic patients (linked to real LGD villages)")
+
+        episodes = _read_csv("medexa_synthetic_care_episodes.csv")
+        for row in episodes:
+            existing = await db.get(CareEpisode, row["care_episode_id"])
+            if existing is not None:
+                continue
+            status_raw = (row.get("status") or "ACTIVE").upper()
+            db.add(CareEpisode(
+                id=row["care_episode_id"], patient_id=row["patient_id"],
+                status=CareEpisodeStatus.OPEN if status_raw == "ACTIVE" else CareEpisodeStatus.CLOSED,
+                opened_at=_parse_dt(row.get("started_at")) or datetime.now(timezone.utc),
+                closed_at=_parse_dt(row.get("ended_at")),
+            ))
+        await db.flush()
+        print(f"Seeded {len(episodes)} synthetic care episodes")
+
+        triage_rows = _read_csv("medexa_synthetic_triage.csv")
+        for row in triage_rows:
+            existing = await db.get(TriageAssessment, row["triage_assessment_id"])
+            if existing is not None:
+                continue
+            symptoms = [s.strip() for s in row["symptoms"].split(",")] if row.get("symptoms") else []
+            db.add(TriageAssessment(
+                id=row["triage_assessment_id"], care_episode_id=row["care_episode_id"],
+                symptoms=symptoms,
+                clinical_risk_level=RISK_MAP.get(row.get("clinical_risk_level", "").upper(), ClinicalRiskLevel.LOW),
+                performed_by="demo-asha-001",
+                performed_at=_parse_dt(row.get("assessment_time")) or datetime.now(timezone.utc),
+                sync_status="synced",
+            ))
+        await db.flush()
+        print(f"Seeded {len(triage_rows)} synthetic triage assessments")
+
+        referrals = _read_csv("medexa_synthetic_referrals.csv")
+        skipped_bad_state = 0
+        for row in referrals:
+            existing = await db.get(Referral, row["referral_id"])
+            if existing is not None:
+                continue
+            state_raw = row.get("current_state_final") or row.get("current_state_medexa")
+            if not state_raw:
+                skipped_bad_state += 1
+                continue
+            created_at = _parse_dt(row["created_at"]) or datetime.now(timezone.utc)
+            referral = Referral(
+                id=row["referral_id"], care_episode_id=row["care_episode_id"],
+                patient_id=row["patient_id"],
+                from_facility_id=row["from_facility_id"], to_facility_id=row["to_facility_id"],
+                current_state=ReferralState(state_raw),
+                reason=row.get("reason") or "Referral created from synthetic operational dataset",
+                priority=(row.get("priority") or "MEDIUM").upper(),
+                created_by="demo-asha-001",
+                created_at=created_at,
+                sync_status="synced",
+            )
+            db.add(referral)
+            sla_dates = compute_initial_sla_due_dates(created_at)
+            db.add(ReferralSla(referral_id=referral.id, **sla_dates))
+        await db.flush()
+        print(f"Seeded {len(referrals) - skipped_bad_state} synthetic referrals with SLA rows"
+              + (f" ({skipped_bad_state} skipped — no mappable state)" if skipped_bad_state else ""))
+
+        transitions = _read_csv("medexa_synthetic_referral_transitions.csv")
+        added_transitions = 0
+        for row in transitions:
+            from_state_raw = row.get("from_state_final") or row.get("from_state_medexa")
+            to_state_raw = row.get("to_state_final") or row.get("to_state_medexa")
+            if not to_state_raw:
+                continue
+            db.add(ReferralStateTransition(
+                referral_id=row["referral_id"],
+                from_state=ReferralState(from_state_raw) if from_state_raw else None,
+                to_state=ReferralState(to_state_raw),
+                changed_by="demo-asha-001",
+                changed_at=_parse_dt(row.get("transitioned_at")) or datetime.now(timezone.utc),
+                note=row.get("note") or None,
+            ))
+            added_transitions += 1
+        await db.flush()
+        print(f"Seeded {added_transitions} synthetic referral transitions")
+
+        services = _read_csv("medexa_synthetic_facility_services.csv")
+        added_services = 0
+        for row in services:
+            existing = await db.get(FacilityService, row["facility_service_id"])
+            if existing is not None:
+                continue
+            capacity_raw = (row.get("capacity_status") or "available").lower()
+            try:
+                capacity = CapacityStatus(capacity_raw)
+            except ValueError:
+                capacity = CapacityStatus.AVAILABLE
+            db.add(FacilityService(
+                id=row["facility_service_id"], facility_id=row["facility_id"],
+                service_name=row["service_name"],
+                available=(row.get("available", "true").lower() == "true"),
+                capacity_status=capacity,
+                last_updated=_parse_dt(row.get("last_updated")) or datetime.now(timezone.utc),
+            ))
+            added_services += 1
+        await db.flush()
+        print(f"Seeded {added_services} synthetic facility service records")
+
+        # follow_up_tasks: the CSV keys by patient_id, but the model
+        # requires care_episode_id (not nullable — see
+        # app/models/continuity.py's FollowUpTask). Each synthetic
+        # patient has exactly one care episode (seeded above 1:1), so
+        # build that lookup once rather than re-querying per row. This
+        # loader was previously entirely missing — the CSV existed on
+        # disk and was never read by any script, so follow_up_tasks
+        # stayed empty regardless of which seed script ran.
+        patient_to_episode: dict[str, str] = {}
+        episode_rows = _read_csv("medexa_synthetic_care_episodes.csv")
+        for erow in episode_rows:
+            patient_to_episode[erow["patient_id"]] = erow["care_episode_id"]
+
+        followups = _read_csv("medexa_synthetic_follow_up_tasks.csv")
+        added_followups = 0
+        skipped_followups = 0
+        for row in followups:
+            existing = await db.get(FollowUpTask, row["follow_up_task_id"])
+            if existing is not None:
+                continue
+            care_episode_id = patient_to_episode.get(row["patient_id"])
+            if care_episode_id is None:
+                skipped_followups += 1
+                continue
+
+            status_raw = (row.get("status") or "PENDING").lower()
+            try:
+                status = FollowUpStatus(status_raw)
+            except ValueError:
+                status = FollowUpStatus.PENDING
+
+            db.add(FollowUpTask(
+                id=row["follow_up_task_id"],
+                care_episode_id=care_episode_id,
+                referral_id=row.get("referral_id") or None,
+                due_at=_parse_dt(row.get("scheduled_at")) or datetime.now(timezone.utc),
+                reason=row.get("reason") or "Follow-up",
+                assigned_to="demo-asha-001",
+                status=status,
+                completed_at=_parse_dt(row.get("completed_at")),
+            ))
+            added_followups += 1
+        await db.flush()
+        print(
+            f"Seeded {added_followups} synthetic follow-up tasks"
+            + (f" ({skipped_followups} skipped — no matching care episode)" if skipped_followups else "")
+        )
+
+        await db.commit()
+        print()
+        print("Done. Demo logins: asha.demo / doctor.demo / officer.demo, password: demo1234")
+        print("These reference REAL West Bengal facilities:")
+        print(f"  ASHA worker at:     {DEMO_ASHA_FACILITY_ID} (Maharajganj PHC)")
+        print(f"  Doctor at:          {DEMO_DOCTOR_FACILITY_ID} (M. R. Bangur District Hospital)")
+        print(f"  District officer at: {DEMO_OFFICER_FACILITY_ID} (Diamond Harbour DH)")
+
+
+if __name__ == "__main__":
+    asyncio.run(seed())

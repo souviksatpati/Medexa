@@ -1,0 +1,145 @@
+triage_assessment_id,care_episode_id,symptoms,clinical_risk_level,assessment_time
+c1f3aaf3-cadd-4a83-9e94-62611e410510,8d790639-b682-47fb-9989-91b0ec33d8f8,Minor joint stiffness,LOW,2026-08-20T10:00:00+00:00
+3a715bb0-f3f6-447b-89dc-1c55f4a98d2c,8d790639-b682-47fb-9989-91b0ec33d8f8,Minor joint stiffness,LOW,2026-08-29T10:00:00+00:00
+16b47804-13d8-4cb4-a4fb-780cacf1e50e,7add1968-cdd9-421f-8259-ea8a1da7ac1f,"Mild cough, Runny nose",LOW,2026-09-05T10:00:00+00:00
+a8338367-32dd-4bcd-a915-c52160aa860a,7add1968-cdd9-421f-8259-ea8a1da7ac1f,"Diarrhea 3 days, Mild dehydration",MEDIUM,2026-08-15T10:00:00+00:00
+d295563f-f116-4411-871d-7afcb08d8098,1218cb80-6f34-4c71-bc59-1c01c522820c,"Mild headache, Low grade fever",LOW,2026-08-21T10:00:00+00:00
+69cae9be-98d7-4715-b7a6-07c95d797796,1218cb80-6f34-4c71-bc59-1c01c522820c,"Hypovolemic shock, Severe postpartum hemorrhage",CRITICAL,2026-08-16T10:00:00+00:00
+8f7c7d3f-186b-437a-a970-ec9875db4127,4cbdf4a5-d175-46a0-b6c6-00ce1b4656fb,"BP 140/90 mmHg, Mild pedal edema",MEDIUM,2026-08-30T10:00:00+00:00
+a1bd7534-2c20-40de-af5d-a6095171fee1,4cbdf4a5-d175-46a0-b6c6-00ce1b4656fb,"Severe respiratory distress, Cyanosis, SpO2 85%",CRITICAL,2026-09-02T10:00:00+00:00
+8c7f4d02-e035-4efa-b6b7-20eee3a5b071,6ccb934b-9364-411f-add9-bf7aa826be7b,"Severe acute malnutrition, Pedal edema ++",HIGH,2026-09-02T10:00:00+00:00
+0aade89f-549e-44c3-a706-cefbc8648744,6ccb934b-9364-411f-add9-bf7aa826be7b,"Moderate fever, Persistent cough",MEDIUM,2026-09-07T10:00:00+00:00
+86da4e40-9a93-4f26-b84d-64719c66ee53,591761c9-23a8-4150-bd3a-89f219114ad5,"Mild cough, Runny nose",LOW,2026-08-30T10:00:00+00:00
+867cb6d7-7cd6-4b5a-9d6e-3ed5a0824176,591761c9-23a8-4150-bd3a-89f219114ad5,"Mild headache, Low grade fever",LOW,2026-08-22T10:00:00+00:00
+4d9f6b20-3a9c-4ce6-83d5-34c8b7132ada,e8dfc37d-6b49-47be-9a62-eb0e8b04616f,"Mild headache, Low grade fever",LOW,2026-09-06T10:00:00+00:00
+67730ead-c59a-455a-9e60-55d145b1381d,e8dfc37d-6b49-47be-9a62-eb0e8b04616f,"Abdominal pain, Nausea",MEDIUM,2026-08-26T10:00:00+00:00
+9424be74-b1ea-473e-8c27-ed61296aa459,344da0d3-03ff-4af9-bd36-6da94b515bf0,"Severe acute malnutrition, Pedal edema ++",HIGH,2026-08-30T10:00:00+00:00
+cfd78175-6470-4cb4-8772-1dc4c98dfa25,344da0d3-03ff-4af9-bd36-6da94b515bf0,"Routine antenatal checkup, Normal fatigue",LOW,2026-09-03T10:00:00+00:00
+a14bc5e9-5b40-4be0-b760-8efd6e318c75,0328f00b-6601-466f-ad07-4d40dcd774fc,"Mild cough, Runny nose",LOW,2026-08-23T10:00:00+00:00
+2e94e224-49ce-4658-b6c7-bb3355a32780,0328f00b-6601-466f-ad07-4d40dcd774fc,"BP 140/90 mmHg, Mild pedal edema",MEDIUM,2026-08-14T10:00:00+00:00
+67541e51-3a2a-4aad-b1eb-f65e4d35fb32,4b34b240-be13-4bbd-a7da-b222d838acf3,"BP 140/90 mmHg, Mild pedal edema",MEDIUM,2026-09-06T10:00:00+00:00
+9b34bd66-3b3e-4099-aa94-cef0d8b2408b,4b34b240-be13-4bbd-a7da-b222d838acf3,"Mild cough, Runny nose",LOW,2026-09-08T10:00:00+00:00
+abe159d7-cedc-4670-bd90-3bb2c7d040da,2803f705-72e7-48cc-b8f4-1988ef09edad,"Mild cough, Runny nose",LOW,2026-09-09T10:00:00+00:00
+a8873157-48e1-4a90-bd93-71cb23bce57e,2803f705-72e7-48cc-b8f4-1988ef09edad,"Moderate fever, Persistent cough",MEDIUM,2026-09-02T10:00:00+00:00
+4acc1421-efcc-4933-998e-d72e51b65620,824b44c8-d5db-4a3e-b544-738e943ad518,Minor joint stiffness,LOW,2026-09-03T10:00:00+00:00
+ef9bdb38-ed2d-4afc-8a18-7af3707cfad8,824b44c8-d5db-4a3e-b544-738e943ad518,"High fever 103F, Severe body pain",HIGH,2026-09-09T10:00:00+00:00
+876f6501-1935-48b0-ace8-f19beed1e0d7,0aa24492-dba0-432e-806b-08d34bfded33,"Severe acute malnutrition, Pedal edema ++",HIGH,2026-08-23T10:00:00+00:00
+8f7f1e23-5a54-4fc4-a20d-598910e22f74,0aa24492-dba0-432e-806b-08d34bfded33,"BP 160/100 mmHg, Blurry vision, Severe headache",HIGH,2026-08-27T10:00:00+00:00
+f5ea7a0e-a6c0-4a17-9549-70326610f7ae,dbda0005-b408-4162-a100-d44a3ee9aadd,"Mild headache, Low grade fever",LOW,2026-08-12T10:00:00+00:00
+70a1bf8c-8649-4b82-b419-fbdae5ec9a9a,6e788aca-cfb2-40ca-a942-9d1cbcb767b1,"BP 160/100 mmHg, Blurry vision, Severe headache",HIGH,2026-08-15T10:00:00+00:00
+8a968dbe-87d0-4949-8c0b-72597a6648d4,c781b9f7-49a8-443e-9a65-23f97beaf793,"Diarrhea 3 days, Mild dehydration",MEDIUM,2026-08-20T10:00:00+00:00
+4a1a8908-617d-4303-b394-3d76ae7f2a9a,7e98d957-6392-4d2d-9b67-190a5114570d,Minor joint stiffness,LOW,2026-08-15T10:00:00+00:00
+89ac1ad6-4be2-48de-ab13-575fae35adab,4da4dddf-a207-49cd-8dcc-4336a022adfe,"BP 160/100 mmHg, Blurry vision, Severe headache",HIGH,2026-08-19T10:00:00+00:00
+e555c12c-8064-462f-a311-8acd58088084,102428ce-9756-44d0-9266-d6b252f71cb1,"Routine antenatal checkup, Normal fatigue",LOW,2026-09-06T10:00:00+00:00
+15f6d570-69d9-46d4-815b-31e2d2e100ff,3f6ce03c-3ca7-44a7-9a0d-cfde459633d3,"Severe respiratory distress, Cyanosis, SpO2 85%",CRITICAL,2026-08-27T10:00:00+00:00
+1ab6be6b-341d-4843-9af3-f665a9baf6b9,d76b82f1-73a5-4201-8114-d35fb233f5ab,"Severe respiratory distress, Cyanosis, SpO2 85%",CRITICAL,2026-09-08T10:00:00+00:00
+e96d43ca-49c5-4f6a-ae50-e5ec9a4b9426,623da09c-dcff-496f-bd6f-bddde1f495ba,"BP 140/90 mmHg, Mild pedal edema",MEDIUM,2026-08-29T10:00:00+00:00
+7d81f570-42ef-4de7-bbbe-04640c2e127d,8785a18d-668e-4b83-96ad-abb1515f5cb0,"BP 140/90 mmHg, Mild pedal edema",MEDIUM,2026-08-17T10:00:00+00:00
+be6016f6-0917-48eb-bb35-c482e0f3ac40,27cfd4e6-ffe8-4eb0-8915-856d96c7f247,"Abdominal pain, Nausea",MEDIUM,2026-08-20T10:00:00+00:00
+45ca9caf-4de2-4481-9878-2b051ff7f8b1,ded10478-5fab-412a-a0c7-030cf9eafb0d,Minor joint stiffness,LOW,2026-08-31T10:00:00+00:00
+9d9b6871-76cb-4b74-898d-c9e4f5939fc6,c20a543c-f75c-498e-b5d2-1085d017de90,"Diarrhea 3 days, Mild dehydration",MEDIUM,2026-08-15T10:00:00+00:00
+cc004670-a009-46e4-8957-af10f9630066,c3a73e41-13f3-4d47-b87a-42672c9f6299,"Diarrhea 3 days, Mild dehydration",MEDIUM,2026-08-18T10:00:00+00:00
+6cde468e-e164-4094-8369-56c5ebd54044,1b35f4d0-c5f7-4e2d-91a2-1ed91ca9e821,"BP 140/90 mmHg, Mild pedal edema",MEDIUM,2026-08-21T10:00:00+00:00
+e610d812-61ee-4ded-88f4-7074b46e05fb,99701f63-d2b0-4304-b825-175752ba2337,"Diarrhea 3 days, Mild dehydration",MEDIUM,2026-08-18T10:00:00+00:00
+c861859e-6a2d-4baf-b4c0-d7abd8bbb4e7,bb0f375a-7382-48cb-86a7-e9d76cc87d7a,"Diarrhea 3 days, Mild dehydration",MEDIUM,2026-08-19T10:00:00+00:00
+8d072e26-025e-43da-a0a6-8c6015d88505,501f4c26-7f0a-4a9d-8c05-0d694f17049e,"Abdominal pain, Nausea",MEDIUM,2026-08-15T10:00:00+00:00
+f0bab3dd-5aa2-495f-957c-7bc3827c3504,0681e647-b470-4864-971e-695ece40e5dd,"Diarrhea 3 days, Mild dehydration",MEDIUM,2026-08-11T10:00:00+00:00
+1395b87b-262d-4d80-b209-aec2c98213e3,f0216699-18ab-4e39-916a-60c2e102b9d2,"High fever 103F, Severe body pain",HIGH,2026-09-03T10:00:00+00:00
+f4883dea-668d-4ac6-b919-930e40670eb4,eb991121-73c8-42f0-9bf3-d41cd76f920d,"BP 160/100 mmHg, Blurry vision, Severe headache",HIGH,2026-08-26T10:00:00+00:00
+7923e875-20a9-4c9b-b480-1402b427048f,f0c78184-9b6c-4738-af35-7272a9e5e315,"High fever 103F, Severe body pain",HIGH,2026-08-22T10:00:00+00:00
+8a0e900f-2940-45dc-94cf-70df7e75fd96,cc7c4a0b-580d-46ac-bf13-b052807cde12,"Mild cough, Runny nose",LOW,2026-09-07T10:00:00+00:00
+bad8c267-02cc-4791-b38b-b7beed36950d,c3e8b323-bfdf-49a0-b431-da51e895dab4,"BP 160/100 mmHg, Blurry vision, Severe headache",HIGH,2026-08-17T10:00:00+00:00
+03a21945-e192-4f7b-95e4-5bb10594ab3f,aa9a7bec-ffa0-48e4-bd99-61e03aa5e294,"Severe acute malnutrition, Pedal edema ++",HIGH,2026-08-17T10:00:00+00:00
+8fade55f-3ed7-43b1-9bee-687b599aabe6,fbe4538e-0291-4789-81a9-afc14113d41f,"Hypovolemic shock, Severe postpartum hemorrhage",CRITICAL,2026-08-12T10:00:00+00:00
+449d7f7d-2a31-47f7-9249-9fef36a8ec8e,32a43734-6d72-4da3-87b6-7e860d11c79c,"Moderate fever, Persistent cough",MEDIUM,2026-08-25T10:00:00+00:00
+9cefcee3-4725-4ef9-9513-2f03b4c3e9fe,bceac444-200a-4ba3-9414-e5564ee9cc5f,Minor joint stiffness,LOW,2026-09-07T10:00:00+00:00
+30551956-a809-4fab-9bf7-321a6c41269a,6328017a-365d-4fc1-b915-dc7928f2d9cf,"Routine antenatal checkup, Normal fatigue",LOW,2026-08-12T10:00:00+00:00
+3aa39462-2a82-44f4-9d24-9e356ec4320a,7dfd762e-1f48-43b9-bfcc-e9d086368515,"Mild cough, Runny nose",LOW,2026-08-25T10:00:00+00:00
+c85f2d25-1fcd-4020-bebd-d0fdcfbdfd70,d9953c05-b912-4d7a-8288-017a43fd281e,"Hypovolemic shock, Severe postpartum hemorrhage",CRITICAL,2026-09-02T10:00:00+00:00
+27a169c5-6871-4c7c-b805-1600b1264d6d,e76a05ad-3b40-40e3-970d-93d7f348ced3,"Mild headache, Low grade fever",LOW,2026-08-13T10:00:00+00:00
+085d5133-db4e-4980-8d33-3a69b35c9521,ec9692a2-bcb0-4389-9eda-250b200fe1ed,"Severe respiratory distress, Cyanosis, SpO2 85%",CRITICAL,2026-08-13T10:00:00+00:00
+611029bd-5b37-4416-8da0-19249d33887b,b92f1b18-90a3-4f53-a73d-f258ae4b6d66,"Hypovolemic shock, Severe postpartum hemorrhage",CRITICAL,2026-09-07T10:00:00+00:00
+af0cb778-1a61-47fd-aed4-e505c2cbcc40,1dd52205-23d5-4f23-81f8-e6827e504449,"Eclampsia pre-seizure, BP 180/110 mmHg, Proteinuria 3+",CRITICAL,2026-09-09T10:00:00+00:00
+a06c6c39-a109-47a8-8f0f-c3bfae6181b7,5e8f6560-efac-45cf-981b-28907aa390ab,"Diarrhea 3 days, Mild dehydration",MEDIUM,2026-08-21T10:00:00+00:00
+628e3234-5582-49b2-a73a-5b29a8eb0457,07e2f60d-2341-4967-a559-04fe5efef11c,"Routine antenatal checkup, Normal fatigue",LOW,2026-08-20T10:00:00+00:00
+e6f9d39a-f631-4eeb-a7e2-f9ca10cc699c,9d5fbcea-aa9a-4c52-bdc4-02ad1f3d3720,"Eclampsia pre-seizure, BP 180/110 mmHg, Proteinuria 3+",CRITICAL,2026-08-11T10:00:00+00:00
+f2bc4d59-1e63-4816-aa48-136da5d40115,3698a9a5-9c02-49f3-bcb8-7b2e380bd1e0,"BP 160/100 mmHg, Blurry vision, Severe headache",HIGH,2026-08-31T10:00:00+00:00
+0ca933aa-c9c4-4c2a-94c2-60a810154b03,a535f2ac-1aa5-48d1-9d00-7bc79bc06aa6,"BP 140/90 mmHg, Mild pedal edema",MEDIUM,2026-08-18T10:00:00+00:00
+52dc6ed6-93e7-4f1c-9eb5-6a71379b21f6,e7126711-174b-4eec-8a9b-bf42fc55a987,"Moderate fever, Persistent cough",MEDIUM,2026-08-13T10:00:00+00:00
+763a1291-d488-4201-a8ca-771b5069715b,5e7ec54c-237e-470d-bb12-d1353551c8eb,"Mild cough, Runny nose",LOW,2026-08-27T10:00:00+00:00
+b222fcfc-41d2-43ba-af71-ef19fd98726f,1709bdfe-e688-40dd-8762-d3f9be3c6938,Minor joint stiffness,LOW,2026-08-31T10:00:00+00:00
+3a24a3e8-0caa-435f-90c4-67744e920d69,a4e7048c-926d-4a0f-999d-8c116fbbb572,"Mild cough, Runny nose",LOW,2026-08-29T10:00:00+00:00
+af490fc6-d6a9-46ff-b5d1-c58f34bacc01,9565f5fd-b926-455b-8104-dad3d0699bd0,"Abdominal pain, Nausea",MEDIUM,2026-08-12T10:00:00+00:00
+c0df5f22-b916-4a74-bc7c-6b4663cba59b,26975f50-a69c-4a27-b2cb-61d70b1bfce6,"Hypovolemic shock, Severe postpartum hemorrhage",CRITICAL,2026-08-24T10:00:00+00:00
+3c0bbd24-1abe-4085-a1c4-14fa73ac8ad5,b3d79874-3276-4768-9447-0492cf701713,"Mild cough, Runny nose",LOW,2026-08-16T10:00:00+00:00
+3bccb7d3-8905-4dc5-b8cd-220d1bfe53c5,c8374ca5-82d5-421a-94a4-b8a1533a8028,"Hypovolemic shock, Severe postpartum hemorrhage",CRITICAL,2026-09-04T10:00:00+00:00
+961052cb-4637-4e34-98a7-8571985cd65a,4ffcd525-1466-4fcb-8976-224170dfba83,"Eclampsia pre-seizure, BP 180/110 mmHg, Proteinuria 3+",CRITICAL,2026-08-11T10:00:00+00:00
+aced78d7-b01b-4090-92c6-9e0fe0296c80,50431e3f-df10-4fbf-aaef-8ddc7dd01f9d,"Severe chest pain, Diaphoresis, SpO2 88%",CRITICAL,2026-08-23T10:00:00+00:00
+fe987ce8-3b77-4f88-8031-4d12d1946859,550e217f-0eee-4d20-aafb-2bdefb483bba,Minor joint stiffness,LOW,2026-09-02T10:00:00+00:00
+6d39ee24-1b8e-4fbf-8fb5-085b6a407f45,7fc5c74f-e687-4db0-85ba-de9ca4425aaa,"Abdominal pain, Nausea",MEDIUM,2026-08-27T10:00:00+00:00
+b1e92210-81a8-40ad-8757-e71115fadb73,f7146966-cde4-4637-afa8-7458c23f0631,"Severe breathlessness on exertion, SpO2 93%",HIGH,2026-08-18T10:00:00+00:00
+765ee5b7-3ccb-408a-a17b-78efc22070cc,baeb146d-0c1c-4f89-8698-5190deea6e08,"Hypovolemic shock, Severe postpartum hemorrhage",CRITICAL,2026-08-14T10:00:00+00:00
+c71e0778-16c4-4c70-8f64-d97ddcfd48d0,79adfbb4-27f3-4a1f-a466-6b0e345c08dd,"Severe breathlessness on exertion, SpO2 93%",HIGH,2026-08-12T10:00:00+00:00
+3ff8d9ae-f244-453a-96ef-194c53f11176,e26f7cd1-e03a-4bb2-873b-d0c3d1e6efd5,"Moderate fever, Persistent cough",MEDIUM,2026-08-15T10:00:00+00:00
+f3b353b8-ba9b-4dd1-b787-fa4a97921877,373a8ae7-2ed7-4bee-82ac-0edfed2da9eb,"Mild headache, Low grade fever",LOW,2026-08-17T10:00:00+00:00
+07d1db9a-4df9-46e8-890f-71c965440da1,2473e690-57ce-4e4a-b3af-354477429eb7,"BP 140/90 mmHg, Mild pedal edema",MEDIUM,2026-08-11T10:00:00+00:00
+1a51c34f-104d-48e9-b11b-4a1258527464,36d7da84-4288-4219-ae88-98b519c96357,"Moderate fever, Persistent cough",MEDIUM,2026-08-17T10:00:00+00:00
+0504f8ad-7736-41fc-9dde-c59e356817bd,fdf593f8-312d-496f-918c-3c68a24858dd,"Moderate fever, Persistent cough",MEDIUM,2026-08-18T10:00:00+00:00
+816d6f42-879b-46ef-8ae9-72c069b4e66a,799edddc-c902-4f48-817b-1cfafb0f695d,"Routine antenatal checkup, Normal fatigue",LOW,2026-08-22T10:00:00+00:00
+c0d0a2bb-312d-447a-8d4b-8c91c362986f,cf3cc8d5-68a1-4efb-a216-c2ac0b21a259,"Severe acute malnutrition, Pedal edema ++",HIGH,2026-08-12T10:00:00+00:00
+9aec459c-2151-4faa-a31b-8cc0ef209cb9,9ac496c6-d53a-4823-ba99-593bc506e1df,"Diarrhea 3 days, Mild dehydration",MEDIUM,2026-08-20T10:00:00+00:00
+33be22a1-eeef-4f60-9909-e9ed6ae42d34,aa058e01-5cb9-470d-8295-69ab3a9f9527,"Eclampsia pre-seizure, BP 180/110 mmHg, Proteinuria 3+",CRITICAL,2026-08-28T10:00:00+00:00
+d79c8520-f932-464e-b59b-2d796f8731f0,74bc2c87-9024-4c35-8a33-953de37ad18d,"Mild headache, Low grade fever",LOW,2026-08-14T10:00:00+00:00
+34d51722-ab51-461a-90c0-ac09dc1ede43,252bcec5-b899-43e6-a1b8-89f841ddf1d6,"Diarrhea 3 days, Mild dehydration",MEDIUM,2026-09-03T10:00:00+00:00
+8a818850-7370-46e3-a49b-dbc38a5e74e7,60d3caec-615e-4f36-8999-d4834b35b203,"Mild cough, Runny nose",LOW,2026-08-21T10:00:00+00:00
+b017a093-adb3-44c5-946b-e51be1649a9e,f594a82b-03c1-4f9e-bfbe-6b93fa4df985,"Severe respiratory distress, Cyanosis, SpO2 85%",CRITICAL,2026-08-25T10:00:00+00:00
+6c237dd5-6fda-4c98-919a-1433e597c269,3be94628-ed98-480e-9138-727c3baa8b5f,Minor joint stiffness,LOW,2026-08-13T10:00:00+00:00
+2ab8af86-dd74-4a21-bb3d-0ba0a4fea4b8,6711d189-aae2-45da-98ba-f333d850ea3e,"Severe acute malnutrition, Pedal edema ++",HIGH,2026-08-12T10:00:00+00:00
+38bef503-64b5-4358-9ced-daaa5fa6453b,9b41fb12-75b7-45c8-bb31-3fb08b651d0e,"Diarrhea 3 days, Mild dehydration",MEDIUM,2026-09-04T10:00:00+00:00
+e1744874-09fe-43ec-b5ec-12985189301e,ef07032e-2fe6-42cc-ad23-cd7663842203,"Moderate fever, Persistent cough",MEDIUM,2026-08-26T10:00:00+00:00
+a40a9541-8988-4446-ae31-b18f28280e4b,1ba45556-2a76-4ece-988f-18b3f7fea257,"Severe acute malnutrition, Pedal edema ++",HIGH,2026-09-07T10:00:00+00:00
+1f6d1b1f-4234-402c-a2aa-a069db7d6086,f7fad433-6ed6-4bd2-a112-ddd4a6b2d810,"BP 140/90 mmHg, Mild pedal edema",MEDIUM,2026-09-01T10:00:00+00:00
+96f8f36d-4f7f-49af-8795-9a9a65162c94,000a0514-b3fe-4681-88bf-950a4de45dc9,"Severe chest pain, Diaphoresis, SpO2 88%",CRITICAL,2026-08-29T10:00:00+00:00
+94df37c5-d43a-4faa-9b89-0ac91bcb8ba2,467c4b49-e377-4e14-a279-0b69062b8850,"High fever 103F, Severe body pain",HIGH,2026-09-06T10:00:00+00:00
+b178316e-df04-4183-ae73-29fc31b6e857,4c6a7056-401d-4550-a48b-951ae9457d41,"Severe chest pain, Diaphoresis, SpO2 88%",CRITICAL,2026-08-29T10:00:00+00:00
+bac09762-5007-4201-b810-35168f19698c,2122e790-4d7e-4266-a010-f0f1531a83aa,"Diarrhea 3 days, Mild dehydration",MEDIUM,2026-08-20T10:00:00+00:00
+a0d7bcc7-d906-4a99-9f28-0a7dd2684cd7,bc12987c-1358-4057-b20d-162d6870ccf1,"Routine antenatal checkup, Normal fatigue",LOW,2026-09-08T10:00:00+00:00
+afd26fed-2a11-41df-b06b-7579e5750170,b211f894-4ad3-45c6-aae0-c83775173856,"Diarrhea 3 days, Mild dehydration",MEDIUM,2026-08-22T10:00:00+00:00
+3ceb8772-4932-4744-aaa7-375a4149198a,535a3756-2396-40a9-9c83-51272ac30870,"Mild cough, Runny nose",LOW,2026-08-31T10:00:00+00:00
+c15a9b5d-74cb-404c-8482-12fa1c8d0538,ae74622f-1bb2-4851-ba10-d8de15b5714a,"Severe respiratory distress, Cyanosis, SpO2 85%",CRITICAL,2026-08-29T10:00:00+00:00
+af485cc9-8516-4d8a-b36c-3dd045752299,485ec0e9-a744-4d9d-8b74-c2ad893115af,"Abdominal pain, Nausea",MEDIUM,2026-08-21T10:00:00+00:00
+2f042690-b346-4f02-9956-dd301bfa1777,8bd3d676-7129-4ad7-a047-dedf099d6db7,Minor joint stiffness,LOW,2026-08-25T10:00:00+00:00
+73cef046-458d-4425-ba69-54c122fb9d2c,9bcb401c-9a36-4e27-92df-d554ce93a969,"Mild cough, Runny nose",LOW,2026-09-06T10:00:00+00:00
+4a9b7af4-63a8-492c-9cd2-47632b4dc659,93ab6cc7-8ed5-4702-b339-7acf07fe50e7,"Mild headache, Low grade fever",LOW,2026-08-31T10:00:00+00:00
+58840835-c6fe-4cec-a418-284998e62a23,98d723ce-1596-4673-b2e0-1c8abe7d1ce2,"Diarrhea 3 days, Mild dehydration",MEDIUM,2026-08-29T10:00:00+00:00
+ff3d3b6c-40ae-477f-bfc2-d518c14ad6a1,2e482a79-8e17-428f-a056-d3f438a2d995,"Diarrhea 3 days, Mild dehydration",MEDIUM,2026-09-05T10:00:00+00:00
+cc0f5a76-c544-4d7e-b0d4-151f8f6306f2,41a33998-ce75-477f-bfe8-5ffb98212e40,"Eclampsia pre-seizure, BP 180/110 mmHg, Proteinuria 3+",CRITICAL,2026-08-23T10:00:00+00:00
+b6699e71-ab43-48cb-a6e8-b132d7abeac3,da420e47-a567-4f2c-9e37-3fe1010d5db2,"BP 140/90 mmHg, Mild pedal edema",MEDIUM,2026-08-20T10:00:00+00:00
+574cafae-36bb-40ce-b2c8-a11b278e9e80,fc9a644a-74bc-4017-8dfc-6ac870e5afda,"Abdominal pain, Nausea",MEDIUM,2026-09-08T10:00:00+00:00
+d7f3bf81-f729-4e4d-aad8-82dae92bc802,d50131e1-9d60-4647-afec-84907f342d03,"Mild headache, Low grade fever",LOW,2026-08-31T10:00:00+00:00
+03917d38-f828-40db-aed3-3236a14af41b,07afc887-18ec-435c-a04a-2ca6cc68fbf2,"Mild headache, Low grade fever",LOW,2026-09-02T10:00:00+00:00
+595a797d-b830-4ae7-9956-721fb1ae92ee,65753fe4-1c8a-4943-8f8a-58f3956835b0,"Mild headache, Low grade fever",LOW,2026-08-13T10:00:00+00:00
+dc69bb3f-4ec1-4b5f-b06f-13ecff8f5b6e,22782ed1-3172-46f9-a4e4-a688b6525379,"Severe acute malnutrition, Pedal edema ++",HIGH,2026-09-07T10:00:00+00:00
+13058ec4-cbfe-41e4-a356-5c7913fcbaf3,0e2dc28d-d9aa-4b0c-88be-eee13d272b17,"Mild cough, Runny nose",LOW,2026-08-30T10:00:00+00:00
+217aff70-331d-49a1-9c64-2a2e1662de34,1debb91c-139a-42e0-b2ab-032285554d84,"BP 160/100 mmHg, Blurry vision, Severe headache",HIGH,2026-08-11T10:00:00+00:00
+f1641f30-44f8-4461-92e2-c4a66ea8d3cd,909fb28e-85ca-424e-b110-3b22bdad6359,Minor joint stiffness,LOW,2026-08-14T10:00:00+00:00
+336fd151-a630-4c2d-83ae-baaa7ea87d3f,3ea1c744-0735-4fa3-8609-98b5106df6c6,"Abdominal pain, Nausea",MEDIUM,2026-08-27T10:00:00+00:00
+9a8f610f-e6a3-4445-bf2b-c476b230f7cc,fe18c841-1da9-4f7d-9423-c44fffd3f3af,"Moderate fever, Persistent cough",MEDIUM,2026-08-28T10:00:00+00:00
+42be614a-b10c-4ced-8d60-29d6c67419ae,9595c3ee-57e6-4363-a2d5-6bb0d752f463,"BP 160/100 mmHg, Blurry vision, Severe headache",HIGH,2026-08-11T10:00:00+00:00
+de029cd4-f9f3-448e-bc35-2e177acd1984,4cc0e935-e8a6-41d0-bd7a-31baa97f0e6d,"Mild headache, Low grade fever",LOW,2026-09-07T10:00:00+00:00
+b1f8207c-f717-41e9-882b-06dc4b60199d,f032e65f-626b-401e-9556-7992f99e3e81,Minor joint stiffness,LOW,2026-09-07T10:00:00+00:00
+9d9d035e-d071-4709-912d-d8ab65318639,53c68d54-0828-4b48-8180-c5da53b774e6,Minor joint stiffness,LOW,2026-08-22T10:00:00+00:00
+a5ebf1e1-81ed-4483-8e5e-96cfc903818a,01a63c66-b6d2-479f-9c5c-8648de6b997a,"Severe acute malnutrition, Pedal edema ++",HIGH,2026-08-30T10:00:00+00:00
+3c6155ff-7a67-48ef-94eb-277d48a843ce,4188ab05-1e37-4f57-a6f6-3deb44b576c8,"Diarrhea 3 days, Mild dehydration",MEDIUM,2026-08-19T10:00:00+00:00
+324e1ef4-6ef4-4dc1-ad99-aa438cd4c300,2cfe3049-c496-4877-93ec-29296de2f056,"High fever 103F, Severe body pain",HIGH,2026-08-21T10:00:00+00:00
+12c97566-dfc2-4f16-afd6-88701353c393,5335e2b7-0dac-4bb1-92fb-b60485d03ae6,"Mild cough, Runny nose",LOW,2026-08-21T10:00:00+00:00
+f8458647-2f1c-44a4-8827-5dc0fbc00b9e,81b6149d-925f-4597-ab3d-bea75eb646bc,"Severe acute malnutrition, Pedal edema ++",HIGH,2026-08-11T10:00:00+00:00
+44d2b949-ebc6-4571-b346-b64d5dbbb758,e01864da-b1d5-47f7-9c76-40ebd09579a2,"Severe breathlessness on exertion, SpO2 93%",HIGH,2026-09-09T10:00:00+00:00
+3ea3d96a-e18f-40d1-9bf0-4df8fd497dcc,b7fe44dd-c0e0-4e90-9d99-f1b628aec30f,"Moderate fever, Persistent cough",MEDIUM,2026-09-05T10:00:00+00:00
+45300e71-c69c-4e88-9c95-7d7e5c34744d,cb33c3bb-ad38-428f-a93c-50d6188ae93a,"Mild headache, Low grade fever",LOW,2026-08-28T10:00:00+00:00
+3707fff9-fb02-4c5a-86bb-787b62df2c95,4f2dfea8-a606-4459-b878-02b657c3ba6b,"BP 140/90 mmHg, Mild pedal edema",MEDIUM,2026-08-14T10:00:00+00:00
+a2eb28d0-e146-48fc-9377-21a6c0edb9a4,554ff80c-737c-4b6b-950f-c6acbf58f094,"Mild cough, Runny nose",LOW,2026-08-19T10:00:00+00:00
+f91c4504-04dd-4312-85c6-af546d7307ef,5b01a992-a060-47a7-bd22-067ad4ce0a03,"Hypovolemic shock, Severe postpartum hemorrhage",CRITICAL,2026-08-30T10:00:00+00:00
+b105d2b5-99b5-4e44-9c35-30be89dc5290,34529802-7d53-4c5a-ae60-f18703071f40,"High fever 103F, Severe body pain",HIGH,2026-09-03T10:00:00+00:00
+d3b27ad7-e366-4c89-b2cb-96d40e3b9ef6,733157fa-4839-4771-973c-7f1dfe12d8a1,Minor joint stiffness,LOW,2026-09-09T10:00:00+00:00
+b5adc076-38ff-478d-b5f8-8349018e4360,a4f9485c-6005-45bb-9728-b59e505062b9,"Mild headache, Low grade fever",LOW,2026-09-02T10:00:00+00:00

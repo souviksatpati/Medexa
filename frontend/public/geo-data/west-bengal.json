@@ -1,0 +1,140 @@
+{
+  "state": "West Bengal",
+  "districts": {
+    "Bankura": {
+      "blocks": {
+        "Joypur Block": [
+          "Rampur Village",
+          "Belur Village",
+          "Gopalpur Forest Ward",
+          "Abhirampur",
+          "Mayurjharna",
+          "Kankradhara",
+          "Joypur Bazar",
+          "Rajnagar",
+          "Salboni",
+          "Kharbona",
+          "Shyamsundarpur",
+          "Baidyanathpur",
+          "Hakimpara",
+          "Tentulia Hamlet",
+          "Dharampur Ward 1",
+          "Dharampur Ward 2"
+        ],
+        "Sonamukhi Block": [
+          "Sonamukhi East",
+          "Sonamukhi West",
+          "Dhansimla",
+          "Radhamohanpur",
+          "Hamirhati",
+          "Panchal",
+          "Kalyanpur",
+          "Chhototaraf",
+          "Bara Taraf",
+          "Madanmohanpur",
+          "Kusumgram"
+        ],
+        "Kotulpur Block": [
+          "Kotulpur Rural",
+          "Shyampur Ward 2",
+          "Laugram",
+          "Mirzapur",
+          "Deshrah",
+          "Sihar",
+          "Gopinathpur",
+          "Madhabpur",
+          "Bansgara",
+          "Koalpara"
+        ],
+        "Bishnupur Block": [
+          "Bishnupur Ward 4",
+          "Dharapat",
+          "Bikna",
+          "Ayodhya",
+          "Uliyara",
+          "Bankadaha",
+          "Layekpara",
+          "Morar",
+          "Belsulia"
+        ]
+      }
+    },
+    "Purulia": {
+      "blocks": {
+        "Purulia I": [
+          "Bhatbundh",
+          "Baraurma",
+          "Chharra",
+          "Sonai",
+          "Lagda",
+          "Dimdiha"
+        ],
+        "Purulia II": [
+          "Agoya-Narra",
+          "Bhangra",
+          "Chhutam",
+          "Golamara",
+          "Kenda"
+        ],
+        "Jhalda": [
+          "Jhalda East",
+          "Maramosor",
+          "Kora",
+          "Tulin",
+          "Begunkodor"
+        ]
+      }
+    },
+    "Paschim Medinipur": {
+      "blocks": {
+        "Garhbeta": [
+          "Garhbeta Rural",
+          "Amlagora",
+          "Sandhipur",
+          "Ukhla",
+          "Manglapota"
+        ],
+        "Salboni": [
+          "Salboni Central",
+          "Bhimpur",
+          "Bankibandh",
+          "Debgram"
+        ]
+      }
+    },
+    "Birbhum": {
+      "blocks": {
+        "Bolpur Sriniketan": [
+          "Sian",
+          "Ruppur",
+          "Kasba",
+          "Sattor",
+          "Bahiri"
+        ],
+        "Suri I": [
+          "Alundi",
+          "Karidhya",
+          "Khatanga",
+          "Mallickpur"
+        ]
+      }
+    },
+    "Hooghly": {
+      "blocks": {
+        "Arambagh": [
+          "Arambagh Rural",
+          "Arandi",
+          "Batur",
+          "Gora",
+          "Harinkhola"
+        ],
+        "Tarakeswar": [
+          "Tarakeswar Rural",
+          "Bhanjipur",
+          "Champadanga",
+          "Keshabpur"
+        ]
+      }
+    }
+  }
+}

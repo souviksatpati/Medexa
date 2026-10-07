@@ -1,0 +1,14 @@
+{
+  "name": "medexa-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "preview": "npm --prefix frontend run preview",
+    "test": "npm --prefix frontend run test",
+    "lint": "npm --prefix frontend run lint",
+    "generate:geo": "npm --prefix frontend run generate:geo",
+    "verify:geo": "npm --prefix frontend run verify:geo",
+    "verify:rbac": "npm --prefix frontend run verify:rbac"
+  }
+}

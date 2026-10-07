@@ -124,6 +124,8 @@ frontend/
 scratch/           Development and exploratory scripts
 ```
 
+_______________________________________________________________________________________________________
+
 ## Documentation
 
 Start at [`docs/README.md`](docs/README.md) for the documentation index. Key references include:
